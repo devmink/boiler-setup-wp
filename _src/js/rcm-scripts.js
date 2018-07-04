@@ -1,0 +1,1 @@
+console.log('rcm-scripts.js working')
