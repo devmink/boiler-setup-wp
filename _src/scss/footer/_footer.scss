@@ -1,0 +1,38 @@
+.footer-wrapper {
+  background: $color-secondary;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  & > * {
+    margin: 0 2rem;
+  }
+
+  .footer-column {
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    &-social {
+      flex-grow: 1;
+
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+
+        li {
+
+          a {
+            color: #fff;
+            text-transform: uppercase;
+            margin: 0 1rem;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

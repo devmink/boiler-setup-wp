@@ -1,0 +1,19 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+<section>
+  <h1>{{ post.get_field('hero_title') }}</h1>
+  
+  <img alt="{{ TimberImage(post.get_field('hero_image')).alt }}"
+  srcset="
+    {{ TimberImage(post.get_field('hero_image')).src | resize(1600)}} 1600w,
+    {{ TimberImage(post.get_field('hero_image')).src | resize(1000)}} 1000w,
+    {{ TimberImage(post.get_field('hero_image')).src | resize(700)}} 700w
+ "
+  src="{{ TimberImage(post.get_field('hero_image')).src | resize(1000)}}"
+  sizes="100vw"
+>
+</section>
+
+{% endblock %}

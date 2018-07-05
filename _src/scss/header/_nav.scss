@@ -1,0 +1,43 @@
+@import '../variables';
+.nav-main {
+  align-self: center;
+
+  ul {
+    background: $color-secondary;
+    list-style: none;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 1rem;
+
+    li {
+      margin: 0 1rem;
+      
+      a {
+        font-size: 1.3rem;
+        text-decoration: none;
+        color: #253D50;
+      }
+    }
+
+    .current-menu-item {
+
+      a {
+        color: #fff;
+        font-size: bold;
+      }
+    }
+  }
+  @media screen and (min-width: 60em) {
+    ul {
+      background: transparent;
+      flex-flow: row nowrap;
+
+      .current-menu-item {
+        a {
+          color: $color-secondary;
+        }
+      }
+    }
+  }
+}

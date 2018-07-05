@@ -1,0 +1,39 @@
+<!doctype html>
+<html class="no-js" {{site.language_attributes}}>
+  <head>
+    <meta charset="{{site.charset}}">
+
+    <title>   
+      {% if wp_title %}
+        {{ wp_title }} - {{ site.name }}
+      {% else %}
+        {{ site.name }}
+      {% endif %}
+    </title>
+    
+    <meta name="description" content="{{site.description}}">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="{{ site.theme.link }}/style.css">
+  </head>
+  <body>
+    
+    <nav role="navigation">
+      <ul>
+        {% for item in primary_menu.get_items %}
+          <li class="nav-item {{item.classes | join(' ')}}">
+            <a class="nav-link" href="{{item.get_link}}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+      
+    <div class="wrapper">
+      {% block content %}
+       No content found!
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

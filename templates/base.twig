@@ -10,9 +10,9 @@
 		<header class="header" >
 			{% block header %}
 				<div class="wrapper">
-					<h1 class="hdr-logo" role="banner">
-						<a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
-					</h1>
+						<a class="hdr-logo-link" href="{{site.url}}" rel="home">
+							<img src="http://localhost/wp-content/uploads/2018/07/SquarePet-logo.png" alt="SquarePet Logo">
+						</a>
 					<nav id="nav-main" class="nav-main" role="navigation">
 						{% include "menu.twig" with {'menu': menu.get_items} %}
 					</nav><!-- #nav -->
@@ -22,6 +22,7 @@
 
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
+
 			<div class="wrapper {{sidebar_class}}">
 				{% block content %}
 					Sorry, no content

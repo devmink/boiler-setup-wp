@@ -1,12 +1,51 @@
 {% extends "base.twig" %}
 
 {% block content %}
+	{# Main Pages: Home, About #}
 	<div class="content-wrapper">
+	<div class="hero-wrapper">
+		<video id="video1" playsinline="" autoplay="autoplay" loop="loop" muted="">
+			<source src="http://myrockcandymedia.com/temp/squarepet-landing/wp-content/themes/eco-child/videos/video-bg2.mp4" type="video/mp4">
+			<source src="http://myrockcandymedia.com/temp/squarepet-landing/wp-content/themes/eco-child/videos/video-bg2.ogg" type="video/ogg">
+			<source src="http://myrockcandymedia.com/temp/squarepet-landing/wp-content/themes/eco-child/videos/video-bg2.webm" type="video/webm">
+				Your browser does not support the video tag.
+		</video>
+		<div class="hero-content">
+			<div class="site-blurb">
+			{{post.content}}
+			</div>
+			{# <h1>Raise the Bowl</h1> #}
+			<div class="rcm-form-container">
+				<h1>GET MORE TAIL</h1>
+				<p>Follow the SquarePet story and be the first to know when we're available near you.<p>
+				<form>
+					<label for="name">
+						<input type="text" name="name" id="name" placeholder="The Best Pet Owner Ever" />
+					</label>
+					<label for="email">
+						<input type="email" name="email" id="email" placeholder="Email" />
+					</label>
+					<div class="checkbox-group">
+						<input type="checkbox" name="checkbox" id="checkbox" />
+						<label for="checkbox">
+						I consent to share my data in this form with SquarePet
+						</label>
+					</div>
+				</form>
+				<button type="submit">Sign Me Up</button>
+			</div>
+		
+		</div>
+	
+	</div>
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+				{# <h1 class="article-h1">{{post.title}}</h1> #}
 				<div class="article-body">
-					{{post.content}}
+					{# {{post.content}} #}
+					{% for image in post.get_field('large_section_field')%}
+						<img src="{{ TimberImage(image) }}" />
+					{% endfor %}
 				</div>
 			</section>
 		</article>

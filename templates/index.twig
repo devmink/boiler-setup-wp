@@ -1,6 +1,20 @@
 {% extends "base.twig" %}
-
+{# Main Blog Page #}
 {% block content %}
+	<div class="hero-slider">
+    {% for image in post.get_field('hero_slider') %}
+			<img src="{{ TimberImage(image) }}" />
+		{% endfor %}
+	</div>
+	<section class="nav-categories">
+		<div class="category">All Posts</div>
+		<div class="category">Nutrition</div>
+		<div class="category">SquareCares</div>
+		<div class="category">Lifestyle</div>
+	</section>
+				{# <h4>{{item.name}}</h4>
+				<h6>{{item.info}}</h6> #}
+				{# <img src="{{TimberImage(item.picture).src}}" /> #}
 	<h2>{{ foo }}</h2>
 	<p>{{ qux }}</p>
 	{% for post in posts %}
